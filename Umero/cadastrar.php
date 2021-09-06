@@ -42,7 +42,12 @@ if(isset($_POST['login'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/index.css">
-    <title>Cadastrar</title>
+    <script src="js/index.js"></script>
+    <script src="https://unpkg.com/boxicons@2.0.9/dist/boxicons.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+    <title>Umero - Cadastrar</title>
 </head>
 <body>
     <form action="" method="POST" oninput="ajax()">

@@ -15,43 +15,17 @@ $row = mysqli_fetch_array($result);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/home.css">
+    <script src="js/home.js"></script>
     <script src="https://unpkg.com/boxicons@2.0.9/dist/boxicons.js"></script>
-    <title>Random Enigmas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+    <title>Umero</title>
 </head>
-<body>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }        
-        .container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 600px;
-        }
-        .container_icons {
-            position: absolute;
-             right: 0; 
-             bottom: 0; 
-             margin-bottom: 110px; 
-             margin-right: 110px;
-        }
-        .enigma_con {
-            width: 300px;
-        }
-        .bx-icon {
-            transform: scale(2.5);
-            cursor: pointer;
-        }
-        #img {
-            width: 200px; 
-            height: 200px;
-        }
-    </style>
+<body style="height: 1000px;">
     <nav>
+        <span>?</span>     
         <h2>Umero</h2>
     </nav>
     <div class="container">
@@ -85,39 +59,7 @@ $row = mysqli_fetch_array($result);
     </div>
 
     <script>
-       function verificResponse() { 
-           const form = document.getElementById('form')
-           const btnTry = document.getElementById('btntry')
-           const btnEnviar = document.getElementById('btnenviar')
-           const response = document.querySelector('.verific')
-           const resCorrect = document.querySelector('.resCorrect')
-           const responseUser = document.querySelector('.value_resposta').value
-           const responseCorrect = document.querySelector('.resposta').value
-            if(responseUser === responseCorrect) {
-                response.innerHTML = `Resposta Correta`
-                btnEnviar.style.display = 'none'
-                form.style.display = 'block'
-                resCorrect.innerHTML = `Resposta correta: ${responseCorrect}`
-           }else {
-                response.innerHTML = `Resposta Errada`
-                btnTry.style.display = 'block' 
-                btnEnviar.style.display = 'none'            
-           }
-        }
-        function retry() {
-            document.getElementById('btntry').style.display = 'none'
-            document.getElementById('btnenviar').style.display = 'block'
-            const responseUser = document.querySelector('.value_resposta')
-            responseUser.focus()
-            responseUser.value = ''
-        }
-        function setEffectIconTada() {
-            const bx_icon = document.querySelector('.bx-icon')
-            bx_icon.setAttribute('animation','tada')
-            bx_icon.addEventListener('mouseout', () => {
-                bx_icon.setAttribute('animation','')
-            })
-        }
+       
     </script>
 </body>
 </html>
