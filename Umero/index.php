@@ -6,7 +6,7 @@ if(isset($_POST['enviar'])) {
     $email = $_POST['email'];
     $senha = $_POST['senha'];
     if(empty($username) || empty($email) || empty($senha)) {
-        $erros = "<p style='color: red'>Preencha todos os Campos</p>";
+        $erros = "Preencha todos os Campos";
     }else {
         $sql = "SELECT username FROM usuarios WHERE username = '$username'";
         $result = mysqli_query($conn,$sql);
@@ -20,10 +20,10 @@ if(isset($_POST['enviar'])) {
                 $_SESSION['logado'] = true;
                 header("Location: home.php");
             }else {
-                $erros = "<p style='color: red'>Email ou Senha Incorretos</p>";
+                $erros = "Email ou Senha Incorretos";
             }
         }else {
-            $erros = "<p style='color: red'>Usuário não existe</p>";
+            $erros = "Usuário não existe";
         }
     } 
 } 
@@ -46,15 +46,23 @@ if(isset($_POST['create'])) {
     <title>Umero</title>
 </head>
 <body>
-    <form action="" method="POST">
-        <?php echo !empty($erros)? $erros : ''?>
-        <input type="text" name="username" placeholder="Insira seu username...">
-        <input type="email" name="email" placeholder="Insira seu email...">
-        <input id="senha" type="password" name="senha" placeholder="Insira sua senha...">
-        <button type="submit" name="enviar">Entrar</button>
-        <button name="create">Criar Conta</button>
-    </form>
-    <button onclick="showPassword()">Mostrar</button>
+    <h1 style="text-align: center; color: white; font-family: 'ZCOOL KuaiLe'; margin-top: 20px;">? Umero Puzzles ?</h1>
+    <div class="container">
+        <form action="" method="POST">
+            <div class="img">
+                <h1>Login</h1>
+                <img src="undraw_quiz_nlyh.svg">
+            </div>
+            <div class="form">
+                <p style="margin-bottom: 15px;" class="erro"><?php echo !empty($erros)? $erros : ''?></p>
+                <input type="text" name="username" placeholder="Nome">
+                <input type="email" name="email" placeholder="Email">
+                <input id="senha" type="password" name="senha" placeholder="Senha">
+                <button type="submit" name="enviar">Entrar</button>
+                <button name="create">Criar Conta</button>
+            </div>
+        </form>
+    </div>
     <script>
         function showPassword() {
             const inp = document.getElementById('senha')
